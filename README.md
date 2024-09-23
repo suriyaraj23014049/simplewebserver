@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:
+## Date:19-09-2024
 
 ## AIM:
 To develop a simple webserver to display the configuration details of my laptop.
@@ -21,11 +21,10 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
-
-'''
+```
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
-content=
+content='''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +106,7 @@ content=
 </table>
 </body>
 </html>
-
+'''
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -121,10 +120,9 @@ print("This is my webserver")
 server_address =('',8000)
 httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
-'''
+```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/7f665e50-9fde-4e96-af57-1cc3bb1bdd83)
-
+![Screenshot 2024-09-19 153620](https://github.com/user-attachments/assets/8f64e4a1-2249-4e7d-89b7-70988d2ac4a8)
 
 
 ## RESULT:
