@@ -21,17 +21,87 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
-```
-from http.server import HTTPServer,BaseHTTPRequestHandler
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
-content='''
-<!doctype html>
-<html>
+# Define the HTML content as a string
+content = '''
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> My Web Server</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specification</title>
+    <style>
+        body{
+            background-color: #ecffc4fe;
+        }
+        table {
+            width: 30%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #000;
+            text-align: left;
+        }
+        td:first-child::after {
+            content: ":";
+            margin-left: 5px;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome</h1>
+    <h2>Laptop Specifications</h2>
+    <table class="specifications-table">
+        <tr>
+            <th>Specification</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td>HP</td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>HP Pavilion</td>
+        </tr>
+        <tr>
+            <td>Processor</td>
+            <td>Intel Core i5 11th Gen</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>8 GB</td>
+        </tr>
+        <tr>
+            <td>Storage</td>
+            <td>512 GB</td>
+        </tr>
+        <tr>
+            <td>Graphics</td>
+            <td>Integrated</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>15.6 Inches</td>
+        </tr>
+        <tr>
+            <td>Battery Life</td>
+            <td>Up to 10 hours</td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>Windows 11</td>
+        </tr>
+        <tr>
+            <td>Special Feature</td>
+            <td>Anti Glare Screen</td>
+        </tr>
+    </table>
 </body>
 </html>
 '''
@@ -45,11 +115,13 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(content.encode())
 
 print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
+server_address = ('', 8000)
+httpd = HTTPServer(server_address, MyServer)
 httpd.serve_forever()
-```
+
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/7f665e50-9fde-4e96-af57-1cc3bb1bdd83)
+
 
 
 ## RESULT:
