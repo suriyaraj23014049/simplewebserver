@@ -24,7 +24,9 @@ Testing the webserver.
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 # Define the HTML content as a string
-content = '''
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+content='''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,52 +58,54 @@ content = '''
 </head>
 <body>
     <h2>Laptop Specifications</h2>
-    <table class="specifications-table">
-        <tr>
-            <th>Specification</th>
-            <th>Details</th>
-        </tr>
-        <tr>
-            <td>Brand</td>
-            <td>HP</td>
-        </tr>
-        <tr>
-            <td>Model</td>
-            <td>HP Pavilion</td>
-        </tr>
-        <tr>
-            <td>Processor</td>
-            <td>Intel Core i5 11th Gen</td>
-        </tr>
-        <tr>
-            <td>RAM</td>
-            <td>8 GB</td>
-        </tr>
-        <tr>
-            <td>Storage</td>
-            <td>512 GB</td>
-        </tr>
-        <tr>
-            <td>Graphics</td>
-            <td>Integrated</td>
-        </tr>
-        <tr>
-            <td>Display</td>
-            <td>15.6 Inches</td>
-        </tr>
-        <tr>
-            <td>Battery Life</td>
-            <td>Up to 10 hours</td>
-        </tr>
-        <tr>
-            <td>Operating System</td>
-            <td>Windows 11</td>
-        </tr>
-        <tr>
-            <td>Special Feature</td>
-            <td>Anti Glare Screen</td>
-        </tr>
-    </table>
+<table class="specifications-table">
+    <tr>
+        <th>Specification</th>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>Brand</td>
+        <td>HP</td>
+    </tr>
+    <tr>
+        <td>Model</td>
+        <td>HP Pavilion</td>
+    </tr>
+    <tr>
+        <td>Processor</td>
+        <td>Intel Core i5 11th Gen</td>
+    </tr>
+    <tr>
+        <td>RAM</td>
+        <td>8 GB</td>
+    </tr>
+    <tr>
+        <td>Storage</td>
+        <td>512 GB</td>
+    </tr>
+
+    
+    <tr>
+        <td>Graphics</td>
+        <td>Integrated</td>
+    </tr>
+    <tr>
+        <td>Display</td>
+        <td>15.6 Inches</td>
+    </tr>
+    <tr>
+        <td>Battery Life</td>
+        <td>Up to 10 hours</td>
+    </tr>
+    <tr>
+        <td>Operating System</td>
+        <td>Windows 11</td>
+    </tr>
+    <tr>
+        <td>Special Feature</td>
+        <td>Anti Glare Screen</td>
+    </tr>
+</table>
 </body>
 </html>
 '''
@@ -115,8 +119,8 @@ class MyServer(BaseHTTPRequestHandler):
         self.wfile.write(content.encode())
 
 print("This is my webserver") 
-server_address = ('', 8000)
-httpd = HTTPServer(server_address, MyServer)
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
 
 ## OUTPUT:
