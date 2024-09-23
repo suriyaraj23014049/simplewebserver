@@ -21,9 +21,7 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
-from http.server import HTTPServer, BaseHTTPRequestHandler
 
-# Define the HTML content as a string
 '''
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
