@@ -24,9 +24,10 @@ Testing the webserver.
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 # Define the HTML content as a string
+'''
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
-content='''
+content=
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +109,7 @@ content='''
 </table>
 </body>
 </html>
-'''
+
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -122,6 +123,7 @@ print("This is my webserver")
 server_address =('',8000)
 httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
+'''
 ## OUTPUT:
 ![image](https://github.com/user-attachments/assets/7f665e50-9fde-4e96-af57-1cc3bb1bdd83)
 
